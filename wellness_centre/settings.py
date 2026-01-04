@@ -92,7 +92,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
+
 
 # For debugging - print to Railway logs
 print(f"DEBUG: ALLOWED_HOSTS = {ALLOWED_HOSTS}")
