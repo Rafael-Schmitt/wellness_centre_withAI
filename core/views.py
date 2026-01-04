@@ -5,7 +5,7 @@ import json
 import openai
 from django.conf import settings
 import os
-import google.generativeai as genai
+
 def home(request):
     return render(request, 'index.html')
 
