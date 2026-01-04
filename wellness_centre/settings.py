@@ -7,11 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-django-secret-key')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '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')
 
-
-
-
-
-
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # FIXED: Removed https:// and trailing slash
