@@ -82,41 +82,51 @@ def chat_api(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            user_message = data.get('message', '')
+            user_message = data.get('message', '').strip()
             
-            # Check if OpenAI API key is available
-            openai_api_key = os.environ.get('OPENAI_API_KEY', '')
+            if not user_message:
+                return JsonResponse({'response': 'Please enter a message! 🌺'})
+            
+            # Get API key from settings
+            openai_api_key = settings.OPENAI_API_KEY
             
             if not openai_api_key:
-                # Provide helpful fallback responses
-                fallback_responses = [
-                    "Hello! I'm your tropical wellness assistant from Serenity Wellness Centre. For personalized wellness advice, please contact our center directly at hello@serenitywellness.com or call +55 (48) 3333-4444. Meanwhile, here's a wellness tip: Start your day with 5 minutes of beachfront meditation to reduce stress by up to 30%! 🌊",
-                    "Aloha! 🌺 I'm currently in learning mode. For personalized tropical wellness guidance, our human experts are available at our Santa Catarina retreat. Try this: Take a mindful walk on the beach and practice gratitude for three things in nature around you.",
-                    "Welcome to Serenity Wellness! While I'm upgrading my knowledge base, here's a tropical wellness tip: The sound of ocean waves naturally calms the nervous system. Spend 10 minutes listening mindfully today. For personalized programs, visit our center or contact us directly!"
-                ]
-                import random
                 return JsonResponse({
-                    'response': random.choice(fallback_responses)
+                    'response': "🌿 Welcome to Serenity Wellness! Our AI assistant is currently upgrading. For personalized wellness advice, please contact us directly at hello@serenitywellness.com or call +55 (48) 3333-4444. Try our beachfront yoga sessions - they're amazing!"
                 })
             
             # Initialize OpenAI client
             client = openai.OpenAI(api_key=openai_api_key)
             
-            # Create a wellness-focused prompt
-            system_prompt = """You are a friendly, knowledgeable wellness assistant at Serenity Wellness Centre in Santa Catarina, Brazil. 
-            You provide helpful, supportive, and professional advice about:
-            - Tropical wellness practices
-            - Beach yoga and meditation
-            - Healthy eating with local Brazilian foods
-            - Stress reduction techniques
-            - Natural healing methods
-            - Mindfulness in nature
+            # Enhanced system prompt
+            system_prompt = """You are Luna, the friendly tropical wellness assistant at Serenity Wellness Centre in Santa Catarina, Brazil. 
             
-            Keep responses warm, encouraging, and infused with tropical wellness wisdom.
-            Mention elements like ocean, beach, rainforest, local fruits, and relaxation when appropriate.
-            Always emphasize the healing power of nature and tropical environments.
+            Your personality:
+            - Warm, nurturing, and calming like ocean waves
+            - Expert in tropical wellness, yoga, meditation, and natural healing
+            - Always positive and encouraging
+            - Use occasional tropical emojis 🌊🌺🌿☀️
+            - Speak in a gentle, supportive tone
             
-            If someone asks about booking, prices, or specific appointments, politely direct them to contact the wellness center directly.
+            Areas of expertise:
+            1. Tropical wellness practices (beach yoga, ocean therapy, rainforest meditation)
+            2. Brazilian superfoods and tropical nutrition
+            3. Stress reduction and mindfulness techniques
+            4. Natural healing methods using local resources
+            5. Wellness routines for tropical climates
+            
+            Important rules:
+            - If someone asks about booking, pricing, or appointments, respond: "For bookings and pricing, please contact our front desk at hello@serenitywellness.com or call +55 (48) 3333-4444"
+            - Don't provide medical advice - suggest consulting with wellness professionals
+            - Keep responses under 150 words
+            - Focus on practical, actionable wellness tips
+            - Mention local Brazilian elements when relevant
+            - Never mention you're an AI - you're "Luna, the wellness guide"
+            
+            Example responses:
+            - "The ocean breeze here in Santa Catarina is perfect for morning meditation! Try this: Find a quiet spot on the beach, close your eyes, and synchronize your breathing with the waves 🌊"
+            - "For tropical nutrition, I love açai bowls with local fruits! They're packed with antioxidants and perfect for our climate."
+            - "Beach yoga at sunrise is magical here! The combination of gentle movement, ocean sounds, and fresh air reduces stress naturally."
             """
             
             response = client.chat.completions.create(
@@ -125,18 +135,32 @@ def chat_api(request):
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_message}
                 ],
-                max_tokens=500,
-                temperature=0.7
+                max_tokens=300,
+                temperature=0.8,
+                top_p=0.9,
+                frequency_penalty=0.3,
+                presence_penalty=0.3
             )
             
+            bot_response = response.choices[0].message.content.strip()
+            
             return JsonResponse({
-                'response': response.choices[0].message.content
+                'response': bot_response,
+                'status': 'success'
             })
             
-        except Exception as e:
-            # More user-friendly error message
+        except openai.APIError as e:
             return JsonResponse({
-                'response': "I'm having a moment of zen. 🌿 For immediate wellness advice, please contact our center directly or try asking about general wellness tips. Here's one: Practice deep breathing while visualizing ocean waves for instant relaxation."
+                'response': f"🌊 Our wellness connection is taking a mindful pause. Please try again in a moment or contact us directly for assistance."
+            })
+        except json.JSONDecodeError:
+            return JsonResponse({
+                'response': 'Please send your wellness question in the proper format.'
+            })
+        except Exception as e:
+            print(f"Chat error: {str(e)}")  # For debugging
+            return JsonResponse({
+                'response': "🌿 Welcome to Serenity Wellness! I'm here to share tropical wellness wisdom. How can I help you find peace and balance today?"
             })
     
     return JsonResponse({'error': 'Invalid request method'}, status=400)
