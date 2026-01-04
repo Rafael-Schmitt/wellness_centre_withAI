@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tropical Wellness Retreat - Santa Catarina{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your <span class="highlight">Tropical</span> Balance</h1>
+            <p class="hero-subtitle">Experience holistic wellness surrounded by Santa Catarina's natural beauty. Rejuvenate your mind, body, and spirit.</p>
+            <div class="hero-buttons">
+                <a href="/contact/" class="btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </a>
+                <a href="/services/" class="btn-secondary">
+                    <i class="fas fa-leaf"></i> Our Services
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-element palm-1">🌴</div>
+            <div class="floating-element palm-2">🌴</div>
+            <div class="floating-element shell">🐚</div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Our Tropical Retreat</h2>
+            <p>Experience wellness like never before in our paradise setting</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon ocean">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Oceanfront Healing</h3>
+                <p>Direct access to pristine beaches with healing ocean views that calm the mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon nature">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Nature Immersion</h3>
+                <p>Surrounded by lush tropical forests and exotic wildlife for complete connection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon wellness">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Holistic Approach</h3>
+                <p>Integrating traditional wisdom with modern wellness techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon ai">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Wellness Guide</h3>
+                <p>Personalized wellness advice available 24/7 through our AI assistant.</p>
+                <a href="/chatbot/" class="btn-small">
+                    <i class="fas fa-comments"></i> Try Assistant
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="services-preview">
+    <div class="container">
+        <div class="preview-content">
+            <div class="preview-text">
+                <h2>Tropical Wellness Experiences</h2>
+                <p>From sunrise yoga on the beach to sunset meditation sessions, every moment is designed for your wellbeing.</p>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Beachfront Yoga & Meditation</span>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tropical Herbal Therapies</span>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Ocean Therapy Sessions</span>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Local Organic Nutrition</span>
+                    </div>
+                </div>
+                <a href="/services/" class="btn-primary">
+                    <i class="fas fa-arrow-right"></i> View All Services
+                </a>
+            </div>
+            <div class="preview-image">
+                <img src="{% static 'images/tropical-wellness.jpg' %}" alt="Tropical Wellness" 
+                     onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Our Guests Say</h2>
+            <p>Stories of transformation in paradise</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"The oceanfront yoga sessions at sunrise were life-changing. I've never felt more at peace."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah M.">
+                    <div>
+                        <h4>Sarah M.</h4>
+                        <span>From New York</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"The combination of tropical surroundings and expert wellness guidance was exactly what I needed."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="John D.">
+                    <div>
+                        <h4>John D.</h4>
+                        <span>From London</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready for Your Tropical Wellness Journey?</h2>
+            <p>Book your retreat today and experience the healing power of Santa Catarina's paradise.</p>
+            <a href="/contact/" class="btn-primary btn-large">
+                <i class="fas fa-calendar-alt"></i> Book Your Stay
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

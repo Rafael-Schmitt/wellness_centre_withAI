@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - Tropical Wellness Retreat{% endblock %}
+
+{% block content %}
+<!-- Contact Hero -->
+<section class="contact-hero">
+    <div class="container">
+        <h1>Begin Your Wellness Journey</h1>
+        <p>Connect with us in paradise</p>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="contact-content">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-form-section">
+                <h2><i class="fas fa-envelope"></i> Send a Message</h2>
+                <form id="contactForm" class="tropical-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> Your Name
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i> Phone Number
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="+55 (48) 99999-9999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">
+                            <i class="fas fa-heart"></i> Wellness Interest
+                        </label>
+                        <select id="interest" name="interest">
+                            <option value="">Select your interest</option>
+                            <option value="yoga">Beach Yoga & Meditation</option>
+                            <option value="massage">Tropical Massage Therapy</option>
+                            <option value="detox">Wellness Detox Programs</option>
+                            <option value="retreat">Full Retreat Package</option>
+                            <option value="other">Other Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i> Your Message
+                        </label>
+                        <textarea id="message" name="message" rows="5" 
+                                  placeholder="Tell us about your wellness goals and any special requests..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" checked>
+                            <span>Receive wellness tips and tropical updates</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info-section">
+                <div class="info-card tropical">
+                    <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                    <p>Santa Catarina, Brazil</p>
+                    <p class="location-desc">Nestled between the Atlantic Ocean and lush rainforests</p>
+                </div>
+                
+                <div class="info-card ocean">
+                    <h3><i class="fas fa-phone"></i> Contact Details</h3>
+                    <p><strong>Phone:</strong> +55 (48) 3333-4444</p>
+                    <p><strong>Email:</strong> hello@serenitywellness.com</p>
+                    <p><strong>WhatsApp:</strong> +55 (48) 99999-8888</p>
+                </div>
+                
+                <div class="info-card nature">
+                    <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                    <div class="hours">
+                        <div class="hour-row">
+                            <span>Monday - Friday</span>
+                            <span>8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="hour-row">
+                            <span>Saturday</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hour-row">
+                            <span>Sunday</span>
+                            <span>10:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card wellness">
+                    <h3><i class="fas fa-comments"></i> Quick Help</h3>
+                    <p>Our AI assistant is available 24/7 for quick questions:</p>
+                    <a href="/chatbot/" class="btn-secondary btn-full">
+                        <i class="fas fa-robot"></i> Chat with AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="container">
+        <h2><i class="fas fa-map"></i> Find Us in Paradise</h2>
+        
+        <div class="map-wrapper">
+            <!-- Google Map -->
+            <div class="google-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1421409.424290045!2d-51.725821199999986!3d-27.242327500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b14117760671%3A0x1c2332d8bcb1de6c!2sSanta%20Catarina%2C%20Brazil!5e0!3m2!1sen!2sus!4v1704287890152!5m2!1sen!2sus&maptype=satellite" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Santa Catarina Satellite View">
+                </iframe>
+            </div>
+            
+            <!-- Map Information -->
+            <div class="map-info">
+                <div class="location-details">
+                    <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                    <div class="address">
+                        <p><strong>Serenity Wellness Centre</strong></p>
+                        <p>Santa Catarina, Brazil</p>
+                        <p>Florianópolis Area</p>
+                    </div>
+                    
+                    <div class="location-features">
+                        <div class="feature">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <div>
+                                <h4>500+ Beaches</h4>
+                                <p>World-renowned coastline</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <h4>Serra do Mar</h4>
+                                <p>Majestic mountain views</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tree"></i>
+                            <div>
+                                <h4>Atlantic Forest</h4>
+                                <p>Lush rainforest trails</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="travel-tips">
+                    <h3><i class="fas fa-plane"></i> Getting Here</h3>
+                    <div class="tip">
+                        <i class="fas fa-plane-departure"></i>
+                        <div>
+                            <h4>Nearest Airport</h4>
+                            <p>Florianópolis International (FLN)</p>
+                            <p>30 minutes from our centre</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <h4>By Car</h4>
+                            <p>Easy access via BR-101 highway</p>
+                            <p>Ample parking available</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-shuttle-van"></i>
+                        <div>
+                            <h4>Airport Transfer</h4>
+                            <p>Complimentary pickup available</p>
+                            <p>Book in advance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Regional Highlights -->
+        <div class="regional-highlights">
+            <h3><i class="fas fa-star"></i> Santa Catarina Highlights</h3>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Top 10 Beaches Worldwide</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-sun"></i>
+                    <span>300+ Sunny Days/Year</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>UNESCO Biosphere Reserve</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-heart"></i>
+                    <span>#1 Wellness Destination in Brazil</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

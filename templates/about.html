@@ -1,0 +1,358 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Tropical Wellness Retreat{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="about-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Our Tropical Wellness Journey</h1>
+            <p>Where nature's healing meets human wellness in Santa Catarina's paradise</p>
+        </div>
+        <div class="hero-decoration">
+            <div class="deco-leaf">🌿</div>
+            <div class="deco-shell">🐚</div>
+            <div class="deco-wave">🌊</div>
+        </div>
+    </div>
+</section>
+
+<!-- Story Section -->
+<section class="our-story">
+    <div class="container">
+        <div class="story-content">
+            <div class="story-image">
+                <img src="{% static 'images/about-retreat.jpg' %}" alt="Serenity Wellness Retreat" 
+                     onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                <div class="image-caption">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Our beachfront sanctuary in Santa Catarina</p>
+                </div>
+            </div>
+            <div class="story-text">
+                <h2><i class="fas fa-heart"></i> Our Story</h2>
+                <p class="lead">Founded in 2015, Serenity Wellness began as a simple dream: to create a sanctuary where people could reconnect with themselves through nature's healing power.</p>
+                
+                <p>Nestled in the breathtaking landscape of Santa Catarina, Brazil, our center emerged from a deep belief in the transformative power of tropical environments. We witnessed how the combination of ocean air, lush rainforests, and warm sunlight created the perfect setting for holistic healing.</p>
+                
+                <p>What started as a small beachfront meditation group has blossomed into a comprehensive wellness retreat, attracting visitors from around the world who seek peace, restoration, and transformation.</p>
+                
+                <div class="story-stats">
+                    <div class="stat">
+                        <span class="number">2,500+</span>
+                        <span class="label">Guests Transformed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">45+</span>
+                        <span class="label">Countries Represented</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">98%</span>
+                        <span class="label">Guest Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="mission-vision">
+    <div class="container">
+        <div class="mv-grid">
+            <div class="mv-card mission">
+                <div class="mv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To provide a transformative tropical sanctuary where individuals can achieve holistic wellness through nature-inspired practices, expert guidance, and compassionate care.</p>
+                <ul class="mission-list">
+                    <li><i class="fas fa-check"></i> Harness nature's healing power</li>
+                    <li><i class="fas fa-check"></i> Personalize every wellness journey</li>
+                    <li><i class="fas fa-check"></i> Promote sustainable wellness practices</li>
+                    <li><i class="fas fa-check"></i> Create lasting positive change</li>
+                </ul>
+            </div>
+            
+            <div class="mv-card vision">
+                <div class="mv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To become Brazil's leading tropical wellness destination, recognized worldwide for innovative, nature-based healing and transformative guest experiences.</p>
+                <div class="vision-goals">
+                    <div class="goal">
+                        <i class="fas fa-leaf"></i>
+                        <span>Expand sustainable practices</span>
+                    </div>
+                    <div class="goal">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Global wellness leadership</span>
+                    </div>
+                    <div class="goal">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Community wellness programs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="our-values">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide every aspect of our tropical retreat</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon nature">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Nature First</h3>
+                <p>We believe true healing begins with reconnecting to the natural world around us.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon compassion">
+                    <i class="fas fa-hands-heart"></i>
+                </div>
+                <h3>Compassionate Care</h3>
+                <p>Every guest receives personalized attention and genuine care throughout their journey.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon integrity">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Integrity</h3>
+                <p>We practice what we teach, maintaining authenticity in all our wellness approaches.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon innovation">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>Blending ancient wisdom with modern techniques, including our AI wellness assistant.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="our-team">
+    <div class="container">
+        <div class="section-header">
+            <h2>Meet Our Wellness Guides</h2>
+            <p>Certified professionals passionate about your tropical wellness journey</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mariana Silva">
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3>Mariana Silva</h3>
+                    <span class="role">Founder & Lead Yoga Therapist</span>
+                    <p>With 15+ years in holistic wellness, Mariana combines Brazilian healing traditions with modern yoga therapy.</p>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">Yoga Therapy</span>
+                        <span class="expertise-tag">Meditation</span>
+                        <span class="expertise-tag">Breathwork</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Carlos Mendes">
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3>Dr. Carlos Mendes</h3>
+                    <span class="role">Holistic Nutrition Specialist</span>
+                    <p>PhD in Nutritional Sciences, focusing on tropical superfoods and their healing properties.</p>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">Nutrition</span>
+                        <span class="expertise-tag">Herbal Medicine</span>
+                        <span class="expertise-tag">Detox Programs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Costa">
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3>Ana Costa</h3>
+                    <span class="role">Massage & Bodywork Director</span>
+                    <p>Specializes in tropical massage techniques using locally-sourced oils and traditional methods.</p>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">Therapeutic Massage</span>
+                        <span class="expertise-tag">Aromatherapy</span>
+                        <span class="expertise-tag">Reiki</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="team-cta">
+            <p>Our team of 12 certified wellness professionals is dedicated to your transformation.</p>
+            <a href="/contact/" class="btn-primary">
+                <i class="fas fa-calendar-alt"></i> Meet Our Team
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Location Advantage -->
+<section class="location-advantage">
+    <div class="container">
+        <div class="location-content">
+            <div class="location-text">
+                <h2>Why Santa Catarina?</h2>
+                <p class="lead">Our paradise location isn't just beautiful—it's scientifically proven to enhance wellness.</p>
+                
+                <div class="advantage-list">
+                    <div class="advantage">
+                        <i class="fas fa-water"></i>
+                        <div>
+                            <h4>Negative Ion Rich Air</h4>
+                            <p>Ocean air contains high levels of negative ions that boost serotonin and improve mood.</p>
+                        </div>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <h4>Optimal Sunshine</h4>
+                            <p>Santa Catarina enjoys 2,500+ sunshine hours annually, perfect for Vitamin D synthesis.</p>
+                        </div>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <h4>Clean Mountain Air</h4>
+                            <p>Surrounded by mountains, our air is exceptionally clean and oxygen-rich.</p>
+                        </div>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <h4>Biodiversity</h4>
+                            <p>Rich ecosystem with healing plants and herbs used in our traditional therapies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="location-map">
+                <div class="map-visual">
+                    <div class="map-marker">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="map-features">
+                        <div class="map-feature beach">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <span>27 Beaches</span>
+                        </div>
+                        <div class="map-feature mountain">
+                            <i class="fas fa-mountain"></i>
+                            <span>3 Mountain Ranges</span>
+                        </div>
+                        <div class="map-feature forest">
+                            <i class="fas fa-tree"></i>
+                            <span>Rainforest Trails</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-info">
+                    <h4><i class="fas fa-map-pin"></i> Santa Catarina, Brazil</h4>
+                    <p>Ranked among the world's top wellness destinations for natural healing environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sustainability -->
+<section class="sustainability">
+    <div class="container">
+        <div class="sustainability-content">
+            <div class="sustainability-image">
+                <img src="{% static 'images/sustainability.jpg' %}" alt="Sustainable Practices" 
+                     onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="sustainability-text">
+                <h2><i class="fas fa-leaf"></i> Our Commitment to Sustainability</h2>
+                <p>We believe wellness extends to our planet. Our practices protect the paradise we call home.</p>
+                
+                <div class="sustainability-practices">
+                    <div class="practice">
+                        <i class="fas fa-recycle"></i>
+                        <div>
+                            <h4>Zero Waste Operations</h4>
+                            <p>85% waste diversion through composting and recycling programs.</p>
+                        </div>
+                    </div>
+                    <div class="practice">
+                        <i class="fas fa-solar-panel"></i>
+                        <div>
+                            <h4>Solar Energy</h4>
+                            <p>100% of our energy comes from solar panels and renewable sources.</p>
+                        </div>
+                    </div>
+                    <div class="practice">
+                        <i class="fas fa-hand-holding-water"></i>
+                        <div>
+                            <h4>Water Conservation</h4>
+                            <p>Rainwater harvesting and greywater recycling systems in place.</p>
+                        </div>
+                    </div>
+                    <div class="practice">
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <h4>Local & Organic</h4>
+                            <p>90% of our food and products sourced from within 50km radius.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="/contact/" class="btn-secondary">
+                    <i class="fas fa-comments"></i> Learn About Our Green Initiatives
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="about-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Begin Your Transformation?</h2>
+            <p>Join thousands who have found peace, healing, and renewal at our tropical sanctuary.</p>
+            <div class="cta-buttons">
+                <a href="/contact/" class="btn-primary btn-large">
+                    <i class="fas fa-calendar-check"></i> Book Your Stay
+                </a>
+                <a href="/services/" class="btn-secondary btn-large">
+                    <i class="fas fa-spa"></i> Explore Programs
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

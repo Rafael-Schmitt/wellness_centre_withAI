@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellness Services - Tropical Retreat{% endblock %}
+
+{% block content %}
+<!-- Services Hero -->
+<section class="services-hero">
+    <div class="container">
+        <h1>Tropical Wellness Services</h1>
+        <p>Holistic treatments inspired by nature's healing power</p>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services-grid-section">
+    <div class="container">
+        <div class="services-grid">
+            {% for service in services %}
+            <div class="service-card">
+                <div class="service-icon {{ service.class }}">
+                    {{ service.icon }}
+                </div>
+                <div class="service-content">
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                    <div class="service-features">
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ service.duration }}</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <span>{{ service.type }}</span>
+                        </div>
+                    </div>
+                    <div class="service-price">
+                        <span class="price">{{ service.price }}</span>
+                        <a href="/contact/?service={{ service.name|urlencode }}" class="btn-small">
+                            <i class="fas fa-calendar"></i> Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Wellness Packages -->
+<section class="packages">
+    <div class="container">
+        <div class="section-header">
+            <h2>Tropical Wellness Packages</h2>
+            <p>Complete retreat experiences for ultimate transformation</p>
+        </div>
+        <div class="package-grid">
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Island Escape</h3>
+                    <div class="package-price">
+                        <span class="amount">$499</span>
+                        <span class="period">/3 days</span>
+                    </div>
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Daily Beach Yoga</li>
+                    <li><i class="fas fa-check"></i> 2 Meditation Sessions</li>
+                    <li><i class="fas fa-check"></i> Herbal Therapy</li>
+                    <li><i class="fas fa-check"></i> Organic Breakfast</li>
+                </ul>
+                <a href="/contact/?package=island-escape" class="btn-secondary">Choose Package</a>
+            </div>
+            
+            <div class="package-card featured">
+                <div class="package-badge">Most Popular</div>
+                <div class="package-header">
+                    <h3>Ocean Harmony</h3>
+                    <div class="package-price">
+                        <span class="amount">$899</span>
+                        <span class="period">/7 days</span>
+                    </div>
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> All Island Escape Features</li>
+                    <li><i class="fas fa-check"></i> Daily Ocean Therapy</li>
+                    <li><i class="fas fa-check"></i> 3 Massage Sessions</li>
+                    <li><i class="fas fa-check"></i> Full Organic Meals</li>
+                    <li><i class="fas fa-check"></i> Private Wellness Coach</li>
+                </ul>
+                <a href="/contact/?package=ocean-harmony" class="btn-primary">Choose Package</a>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Rainforest Renewal</h3>
+                    <div class="package-price">
+                        <span class="amount">$1299</span>
+                        <span class="period">/10 days</span>
+                    </div>
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> All Ocean Harmony Features</li>
+                    <li><i class="fas fa-check"></i> Rainforest Hiking</li>
+                    <li><i class="fas fa-check"></i> Daily Spa Treatments</li>
+                    <li><i class="fas fa-check"></i> Nutrition Planning</li>
+                    <li><i class="fas fa-check"></i> Lifetime Follow-up</li>
+                </ul>
+                <a href="/contact/?package=rainforest-renewal" class="btn-secondary">Choose Package</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

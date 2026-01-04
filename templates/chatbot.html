@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Wellness Assistant - Tropical Retreat{% endblock %}
+
+{% block content %}
+<!-- Chatbot Hero -->
+<section class="chatbot-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Your Tropical Wellness Guide</h1>
+            <p>24/7 AI assistant for your wellness journey</p>
+        </div>
+        <div class="hero-decoration">
+            <div class="decoration-item"><i class="fas fa-leaf"></i></div>
+            <div class="decoration-item"><i class="fas fa-water"></i></div>
+            <div class="decoration-item"><i class="fas fa-spa"></i></div>
+        </div>
+    </div>
+</section>
+
+<!-- Chatbot Interface -->
+<section class="chatbot-interface">
+    <div class="container">
+        <div class="chatbot-container">
+            <!-- Chat Header -->
+            <div class="chat-header tropical">
+                <div class="chat-avatar">
+                    <div class="avatar-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="avatar-info">
+                        <h3>Serenity AI Assistant</h3>
+                        <p class="status online">
+                            <i class="fas fa-circle"></i> Online
+                        </p>
+                    </div>
+                </div>
+                <div class="chat-controls">
+                    <button class="control-btn" id="clearChat">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <p>Aloha! 🌺 I'm your tropical wellness assistant from Serenity Wellness in Santa Catarina. I'm here to help with:</p>
+                            <ul class="ai-capabilities">
+                                <li>🌿 Wellness advice for your tropical retreat</li>
+                                <li>🧘 Meditation and yoga guidance</li>
+                                <li>🥗 Healthy eating in paradise</li>
+                                <li>😌 Stress management techniques</li>
+                                <li>🌅 Making the most of your stay</li>
+                            </ul>
+                            <p>How can I help you today?</p>
+                        </div>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Suggestions -->
+            <div class="quick-suggestions">
+                <p class="suggestion-title">Quick questions:</p>
+                <div class="suggestion-chips">
+                    <button class="chip" data-question="What are the best morning routines for a tropical retreat?">
+                        <i class="fas fa-sun"></i> Morning Routine
+                    </button>
+                    <button class="chip" data-question="Suggest some healthy tropical foods to try">
+                        <i class="fas fa-utensils"></i> Tropical Foods
+                    </button>
+                    <button class="chip" data-question="How can I practice mindfulness on the beach?">
+                        <i class="fas fa-water"></i> Beach Meditation
+                    </button>
+                    <button class="chip" data-question="What should I pack for a wellness retreat in Santa Catarina?">
+                        <i class="fas fa-suitcase"></i> Packing List
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="Ask me about tropical wellness, meditation, healthy living, or your retreat experience..."></textarea>
+                    <button id="sendButton" class="send-btn tropical">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-hints">
+                    <span><i class="fas fa-lightbulb"></i> Try asking about beach yoga, local fruits, or relaxation techniques</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="ai-features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h4>Smart Wellness</h4>
+                <p>Personalized advice based on your needs</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Safe & Private</h4>
+                <p>Your conversations are confidential</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4>24/7 Available</h4>
+                <p>Always here for your wellness journey</p>
+            </div>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> This AI assistant provides general wellness information and is not a substitute for professional medical advice. Always consult healthcare professionals for medical concerns.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AI Tips -->
+<section class="ai-tips">
+    <div class="container">
+        <h2><i class="fas fa-lightbulb"></i> Wellness Tips from AI</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-icon sunrise">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <h3>Sunrise Meditation</h3>
+                <p>Start your day with beachfront meditation during sunrise for optimal energy.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon ocean">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Ocean Therapy</h3>
+                <p>The sound of waves reduces stress by 30%. Practice mindful listening daily.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon nutrition">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3>Tropical Nutrition</h3>
+                <p>Local fruits like açaí and papaya boost immunity and energy levels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendButton');
+    const suggestionChips = document.querySelectorAll('.chip');
+    const clearChatBtn = document.getElementById('clearChat');
+    
+    // Add message to chat
+    function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = isUser ? 'message user' : 'message bot';
+        
+        const timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-${isUser ? 'user' : 'robot'}"></i>
+            </div>
+            <div class="message-content">
+                <div class="message-text">
+                    <p>${text}</p>
+                </div>
+                <span class="message-time">${timestamp}</span>
+            </div>
+        `;
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Show typing indicator
+    function showTyping() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot typing';
+        typingDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return typingDiv;
+    }
+    
+    // Send message to backend
+    async function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        addMessage(message, true);
+        userInput.value = '';
+        
+        // Show typing indicator
+        const typingIndicator = showTyping();
+        
+        try {
+            const response = await fetch('/api/chat/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ message: message })
+            });
+            
+            const data = await response.json();
+            
+            // Remove typing indicator
+            typingIndicator.remove();
+            
+            // Add bot response
+            addMessage(data.response || "I'm here to help with your wellness journey. Could you please rephrase your question?");
+            
+        } catch (error) {
+            typingIndicator.remove();
+            addMessage("I'm having trouble connecting right now. Please try again in a moment or contact us directly.");
+        }
+    }
+    
+    // Get CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    // Event Listeners
+    sendButton.addEventListener('click', sendMessage);
+    
+    userInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+    
+    suggestionChips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            userInput.value = this.getAttribute('data-question');
+            sendMessage();
+        });
+    });
+    
+    clearChatBtn.addEventListener('click', function() {
+        if (confirm('Clear all chat messages?')) {
+            chatMessages.innerHTML = `
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <p>Hello again! 🌺 What would you like to know about tropical wellness today?</p>
+                        </div>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
+    
+    // Floating AI button
+    const floatingBtn = document.querySelector('.floating-ai-btn');
+    if (floatingBtn) {
+        floatingBtn.addEventListener('click', function() {
+            userInput.focus();
+            window.scrollTo({
+                top: document.querySelector('.chat-input-area').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+</script>
+{% endblock %}
