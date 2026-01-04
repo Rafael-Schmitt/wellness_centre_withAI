@@ -77,7 +77,7 @@ def contact(request):
 def chatbot_view(request):
     return render(request, 'chatbot.html')
 
-
+@csrf_exempt
 def chat_api(request):
     if request.method == 'POST':
         try:
