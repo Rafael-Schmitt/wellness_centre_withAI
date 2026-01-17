@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Chat Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container p-4">
+            <h1 class="text-center mb-4">🧘 Wellness Chat Assistant</h1>
+            <p class="text-center mb-4">This is the chatbot interface. Connect it to OpenAI to enable chat functionality.</p>
+            
+            <!-- Navigation -->
+            <div class="text-center mb-4">
+                <a href="/" class="btn btn-outline-primary">Home</a>
+                <a href="/about/" class="btn btn-outline-primary">About</a>
+                <a href="/services/" class="btn btn-outline-primary">Services</a>
+                <a href="/contact/" class="btn btn-outline-primary">Contact</a>
+            </div>
+            
+            <!-- Chat interface will be added here -->
+            <div id="chat-interface">
+                <p>To enable chat, make sure you:</p>
+                <ol>
+                    <li>Have a valid OpenAI API key in your .env file</li>
+                    <li>Have installed the openai package: <code>pip install openai</code></li>
+                    <li>Your API key is loaded correctly in settings.py</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
