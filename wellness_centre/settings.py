@@ -49,9 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
     'crispy_forms',
-    'chatbot',
+    'chatbot.apps.ChatbotConfig',  # Updated to use ChatbotConfig
 ]
 
 MIDDLEWARE = [
