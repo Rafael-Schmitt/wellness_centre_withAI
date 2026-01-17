@@ -1,11 +1,37 @@
 import os
 from pathlib import Path
-
 import dj_database_url
+from dotenv import load_dotenv  
+load_dotenv()  # Load environment variables from .env file
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_MODEL = "gpt-3.5-turbo"  # or "gpt-4"
+OPENAI_MAX_TOKENS = 500
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CHATBOT_CONFIG = {
+    'system_prompt': """You are a compassionate wellness assistant for a wellness center. 
+    Your role is to provide guidance on mental health, stress management, mindfulness, 
+    and wellness practices. Be empathetic, non-judgmental, and professional.
+    
+    Rules:
+    1. Never provide medical diagnosis
+    2. Always suggest consulting professionals for serious concerns
+    3. Focus on evidence-based wellness practices
+    4. Maintain confidentiality and privacy
+    5. Be supportive and encouraging
+    
+    Wellness Center Services:
+    - Yoga and meditation classes
+    - Mental health counseling
+    - Stress management workshops
+    - Nutrition guidance
+    - Holistic therapies""",
+    'temperature': 0.7,
+}
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
@@ -24,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'crispy_forms',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
